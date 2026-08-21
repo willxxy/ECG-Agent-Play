@@ -26,6 +26,14 @@
 </h5>
 </div>
 
+## Clone dependencies
+
+This repository pins fairseq-signals as a Git submodule. Initialize it after cloning:
+
+```bash
+git submodule update --init --recursive
+```
+
 ## Introduction
 
 Recent advances in Multimodal Large Language Models have rapidly expanded to electrocardiograms, focusing on classification, report generation, and single-turn QA tasks. However, these models fall short in real-world scenarios, lacking multi-turn conversational ability, on-device efficiency, and precise understanding of ECG measurements such as the PQRST intervals.

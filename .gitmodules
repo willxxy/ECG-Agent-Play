@@ -1,0 +1,3 @@
+[submodule "src/fairseq-signals"]
+	path = src/fairseq-signals
+	url = https://github.com/Jwoo5/fairseq-signals.git
