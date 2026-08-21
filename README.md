@@ -41,8 +41,7 @@ Create the environment with Python 3.11. PyTorch is installed first because Flas
 ```bash
 uv venv
 source .venv/bin/activate
-uv pip install torch==2.8.0 packaging==26.0 setuptools==80.9.0 wheel
-uv pip install -r requirements.txt --no-build-isolation-package flash-attn
+uv pip install -r requirements.txt
 ```
 
 ## Introduction
