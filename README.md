@@ -34,6 +34,17 @@ This repository pins fairseq-signals as a Git submodule. Initialize it after clo
 git submodule update --init --recursive
 ```
 
+## Environment
+
+Create the environment with Python 3.11. PyTorch is installed first because FlashAttention needs it at build time.
+
+```bash
+uv venv
+source .venv/bin/activate
+uv pip install torch==2.8.0 packaging==26.0 setuptools==80.9.0 wheel
+uv pip install -r requirements.txt --no-build-isolation-package flash-attn
+```
+
 ## Introduction
 
 Recent advances in Multimodal Large Language Models have rapidly expanded to electrocardiograms, focusing on classification, report generation, and single-turn QA tasks. However, these models fall short in real-world scenarios, lacking multi-turn conversational ability, on-device efficiency, and precise understanding of ECG measurements such as the PQRST intervals.

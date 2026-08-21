@@ -55,3 +55,4 @@ uvicorn==0.40.0
 wfdb==4.3.0
 xformers==0.0.32.post2
 xmltodict==1.0.2
+-e ./src/fairseq-signals
