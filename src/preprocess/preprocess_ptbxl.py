@@ -46,13 +46,14 @@ def main(args):
     np.random.seed(args.seed)
 
     # Load the CSV and create a mapping from ecg_id to patient_id
-    csv = pd.read_csv('./ptbxl_files/ptbxl_database.csv')
+    csv = pd.read_csv('./src/ptbxl_files/ptbxl_database.csv')
     ecg_id_to_patient = dict(zip(csv['ecg_id'].astype(str), csv['patient_id'].astype(str)))
 
     for root, subdirs, _ in os.walk(dir_path):
         for subdir in subdirs:
             subdir_path = os.path.join(root, subdir)
             for file in os.listdir(subdir_path):
+                print(file)
                 if file.endswith(".hea"):  # Process only .hea files (WFDB records)
                     ecg_id = str(int(file[:-7]))  # Extract ECG ID from filename
                     record_path = os.path.join(subdir_path, file[:-4])  # Remove .hea extension
