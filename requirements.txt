@@ -1,7 +1,6 @@
 apex==0.9.10dev
 backoff==2.2.1
 bitsandbytes==0.48.2
-cog==0.16.8
 datasets==4.3.0
 deepspeed==0.18.4
 diffusers==0.36.0
@@ -23,7 +22,7 @@ neurokit2==0.2.7
 numpy==2.4.1
 omegaconf==2.3.0
 openai==2.15.0
-packaging==26.0
+packaging
 pandarallel==1.6.5
 peft==0.17.1
 Pillow==12.1.0
@@ -38,9 +37,8 @@ Requests==2.32.5
 scikit_learn==1.8.0
 scipy==1.17.0
 setuptools==80.9.0
-sglang==0.5.8
 shortuuid==1.0.13
-skimage==0.0
+scikit-image
 tensorflow==2.20.0
 tiktoken==0.12.0
 tokenizers==0.22.2
