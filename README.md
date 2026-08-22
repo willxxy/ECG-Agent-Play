@@ -44,6 +44,10 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
 
+## Installation Notes (willxxy)
+Our server GCC version is 8.5, thus not meeting the requirement for apex (needed for things like `src/fairseq-signals/fairseq_signals/modules/layer_norm.py`).
+We use a self-contained GCC 13 package and path to this package using micromamba (largely suggested by ChatGPT). With this modification, we are able to fully install the necessary requirements.
+
 ## Introduction
 
 Recent advances in Multimodal Large Language Models have rapidly expanded to electrocardiograms, focusing on classification, report generation, and single-turn QA tasks. However, these models fall short in real-world scenarios, lacking multi-turn conversational ability, on-device efficiency, and precise understanding of ECG measurements such as the PQRST intervals.

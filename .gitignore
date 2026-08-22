@@ -27,3 +27,4 @@ venv.bak/
 .vscode/
 wandb
 .claude
+apex/
