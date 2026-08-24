@@ -50,6 +50,26 @@ We use a self-contained GCC 13 package and path to this package using micromamba
 
 If your GCC version is already up to the date, ignore this and use the original requirements.txt file with `apex==0.9.10dev`.
 
+## Pipeline setup notes
+
+Willxxy own notes when setting up.
+
+1. From the root of this repo, I put the data like so:
+
+    ```
+    ECG-Agent-Play
+    |__data
+        |__physionet_preproccessed
+        |__ptbxl_preprocessed
+        |__spectralx
+    ```
+
+    For every preprocessing script, I pathed the output to one of the following folders above. The organization inside each folder is not too important. Just make sure to preprocess + manifest.
+
+2. I used all default configs for pretraining w2v except for batch size (64 --> 32) due to memory constraints at the time of this readme. The pretraining w2v is being trained on 2 H100 NVL gpus that has other jobs running on it, therefore the convergence may be slower. I will rerun it once its more free but for now it should be fine. 
+
+3. 
+
 ## Introduction
 
 Recent advances in Multimodal Large Language Models have rapidly expanded to electrocardiograms, focusing on classification, report generation, and single-turn QA tasks. However, these models fall short in real-world scenarios, lacking multi-turn conversational ability, on-device efficiency, and precise understanding of ECG measurements such as the PQRST intervals.

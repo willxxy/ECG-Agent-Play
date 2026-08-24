@@ -144,7 +144,7 @@ hydra:
     - path: ''
       schema: structured
       provider: schema
-    output_dir: /p01/whan/ecg_agent/ECG-Agent-Play/outputs/2026-08-23/21-01-46
+    output_dir: /p01/whan/ecg_agent/ECG-Agent-Play/outputs/2026-08-24/01-07-08
     choices:
       hydra/env: default
       hydra/callbacks: null

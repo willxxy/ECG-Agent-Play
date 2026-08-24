@@ -112,11 +112,11 @@ hydra:
     hydra:
     - hydra.mode=RUN
     task:
-    - task.data=/p01/whan/ECG-Agent-Play/data/physionet_preprocessed/manifest/cmsc
+    - task.data=/p01/whan/ecg_agent/ECG-Agent-Play/data/physionet_preprocessed/manifest/cmsc
   job:
     name: hydra_train
     chdir: null
-    override_dirname: task.data=/p01/whan/ECG-Agent-Play/data/physionet_preprocessed/manifest/cmsc
+    override_dirname: task.data=/p01/whan/ecg_agent/ECG-Agent-Play/data/physionet_preprocessed/manifest/cmsc
     id: ???
     num: ???
     config_name: w2v_cmsc_rlm
@@ -144,7 +144,7 @@ hydra:
     - path: ''
       schema: structured
       provider: schema
-    output_dir: /p01/whan/ecg_agent/ECG-Agent-Play/outputs/2026-08-23/21-01-24
+    output_dir: /p01/whan/ecg_agent/ECG-Agent-Play/outputs/2026-08-24/01-01-32
     choices:
       hydra/env: default
       hydra/callbacks: null
