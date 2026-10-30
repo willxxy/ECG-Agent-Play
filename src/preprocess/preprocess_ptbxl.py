@@ -1,4 +1,5 @@
 import argparse
+import ast
 import os
 import pandas as pd
 import wfdb
@@ -47,7 +48,10 @@ def main(args):
 
     # Load the CSV and create a mapping from ecg_id to patient_id
     csv = pd.read_csv('./src/ptbxl_files/ptbxl_database.csv')
-    ecg_id_to_patient = dict(zip(csv['ecg_id'].astype(str), csv['patient_id'].astype(str)))
+    ecg_id_to_patient = dict(zip(csv['ecg_id'].astype(str), csv['patient_id'].astype(int)))
+    scp_codes = csv['scp_codes'].map(ast.literal_eval)
+    class_labels = sorted({code for codes in scp_codes for code in codes})
+    ecg_id_to_labels = dict(zip(csv['ecg_id'].astype(str), scp_codes))
 
     for root, subdirs, _ in os.walk(dir_path):
         for subdir in subdirs:
@@ -80,7 +84,8 @@ def main(args):
                         data = {
                             "curr_sample_rate": sample_rate,
                             "feats": record[leads_to_load, :],
-                            "patient_id": patient_id  # Include patient ID
+                            "patient_id": patient_id,
+                            "label": np.array([code in ecg_id_to_labels[ecg_id] for code in class_labels], dtype=np.float32)
                         }
 
                         output_filename = f"HR{ecg_id}.mat"
