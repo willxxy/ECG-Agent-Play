@@ -38,7 +38,7 @@ def get_parser():
     parser.add_argument(
         "--data-dir",
         type=str,
-        default="ptbxl_10s",
+        default="mat_files",
         help="Subdirectory containing .mat files (relative to root)"
     )
     parser.add_argument(
