@@ -30,3 +30,4 @@ wandb
 apex/
 data/
 outputs/
+ptbxl_preprocessed/
